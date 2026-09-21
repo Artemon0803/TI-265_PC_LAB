@@ -1,3 +1,4 @@
+// TI-265 Pcela Artiom LAB 1 var. 9
 #include <stdio.h>
 #include <math.h>
 
