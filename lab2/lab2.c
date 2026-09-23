@@ -41,7 +41,7 @@ int main()
 
     printf("\nSum between positive: %.2f", sum);
 
-    //Sort 0 to the right
+    //Move 0 to the right
     for(i = 0; i < MAX_SIZE; i++){
         for(int j = i+1; j < MAX_SIZE; j++){
             if(mass[i] == 0 && mass[j] !=0){
