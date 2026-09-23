@@ -44,7 +44,7 @@ int main()
     //Sort 0 to the right
     for(i = 0; i < MAX_SIZE; i++){
         for(int j = i+1; j < MAX_SIZE; j++){
-            if(mass[i] == 0){
+            if(mass[i] == 0 && mass[j] !=0){
                 mass[i] = mass[j];
                 mass[j] = 0;
             }
