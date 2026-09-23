@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
     float matrix[10][10] =  {
@@ -49,15 +50,15 @@ int main() {
         printf("\n");
     }
 
-    //Sum of absolute elements below the main diagonal in the smoothed matrix
+    //Absolute sum of elements below the main diagonal in the smoothed matrix
     float sum_below_diagonal = 0.0;
     for (int i = 1; i < 10; i++) {
         for (int j = 0; j < i; j++) {
-            sum_below_diagonal += smoothed_matrix[i][j];
+            sum_below_diagonal += fabsf(smoothed_matrix[i][j]);
         }
     }
 
-    printf("\nSum of absolute elements below the main diagonal: %.2f\n", sum_below_diagonal);
+    printf("\nAbsolute sum of elements below the main diagonal: %.2f\n", sum_below_diagonal);
 
     return 0;
 }
