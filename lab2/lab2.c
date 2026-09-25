@@ -47,6 +47,7 @@ int main()
             if(mass[i] == 0 && mass[j] !=0){
                 mass[i] = mass[j];
                 mass[j] = 0;
+                continue;
             }
         }
     }
