@@ -11,12 +11,12 @@ int main(){
     struct TRAIN RASP[3];
 
     for(int i = 0; i < 3; i++){
-        printf("Поезд #%d\n", i);
-        printf("Введите пункт назначения: ");
+        printf("Train #%d\n", i);
+        printf("Destination: ");
         scanf("%254s", RASP[i].BEGST);
-        printf("Введите номер поезда: ");
+        printf("Train Number: ");
         scanf("%d", &RASP[i].TERM);
-        printf("Введите время отправления: ");
+        printf("Departure Time: ");
         scanf("%d", &RASP[i].TIME);
     }
 
@@ -30,7 +30,7 @@ int main(){
         }
     }
 
-    printf("\nОтсортированный массив:\n");
+    printf("\nSorted array:\n");
     for(int i = 0; i < 3; i++){
         printf("RASP[%d]:\n", i);
         printf("BEGST: %s\n", RASP[i].BEGST);
@@ -38,16 +38,16 @@ int main(){
         printf("TIME: %d:%d\n", RASP[i].TIME / 100, RASP[i].TIME % 100);
     }
 
-    printf("\nВведите номер поезда для поиска: ");
+    printf("\n Enter train number to search: ");
     int searchTerm;
     scanf("%d", &searchTerm);
     if(searchTerm < 0){
-        printf("Ошибка: номер поезда не может быть отрицательным.\n");
+        printf("Error: train number cannot be negative.\n");
     } else {
         short found = 0;
         for(int i = 0; i < 3; i++){
             if(RASP[i].TERM == searchTerm){
-                printf("Поезд найден:\n");
+                printf("Train found:\n");
                 printf("BEGST: %s\n", RASP[i].BEGST);
                 printf("TERM: %d\n", RASP[i].TERM);
                 printf("TIME: %d:%d\n", RASP[i].TIME / 100, RASP[i].TIME % 100);
@@ -56,7 +56,7 @@ int main(){
             }
         }
         if(!found){
-            printf("Поезд с номером %d не найден.\n", searchTerm);
+            printf("Train with number %d not found.\n", searchTerm);
         }
     }
 
