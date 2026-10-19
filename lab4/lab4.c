@@ -2,9 +2,9 @@
 
 struct TRAIN
 {
-    char BEGST[255];
-    int TERM;
-    int TIME;
+    char BEGST[255]; //Destination
+    int TERM; //Train number
+    int TIME; //Departure time
 };
 
 int main(){
