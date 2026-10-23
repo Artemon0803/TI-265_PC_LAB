@@ -21,11 +21,11 @@ int main(){
     }
 
     for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3 - i - 1; j++){
-            if(RASP[j].TERM > RASP[j + 1].TERM){
-                struct TRAIN temp = RASP[j];
-                RASP[j] = RASP[j + 1];
-                RASP[j + 1] = temp;
+        for(int j = i; j < 3; j++){
+            if(RASP[i].TERM > RASP[j].TERM){
+                struct TRAIN temp = RASP[i];
+                RASP[i] = RASP[j];
+                RASP[j] = temp;
             }
         }
     }
@@ -35,7 +35,7 @@ int main(){
         printf("RASP[%d]:\n", i);
         printf("BEGST: %s\n", RASP[i].BEGST);
         printf("TERM: %d\n", RASP[i].TERM);
-        printf("TIME: %d:%d\n", RASP[i].TIME / 100, RASP[i].TIME % 100);
+        printf("TIME: %02d:%02d\n", RASP[i].TIME / 100, RASP[i].TIME % 100);
     }
 
     printf("\n Enter train number to search: ");
@@ -50,7 +50,7 @@ int main(){
                 printf("Train found:\n");
                 printf("BEGST: %s\n", RASP[i].BEGST);
                 printf("TERM: %d\n", RASP[i].TERM);
-                printf("TIME: %d:%d\n", RASP[i].TIME / 100, RASP[i].TIME % 100);
+                printf("TIME: %02d:%02d\n", RASP[i].TIME / 100, RASP[i].TIME % 100);
                 found = 1;
                 break;
             }
