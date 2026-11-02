@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(){
-    char str[] = "  Hello,   world!  Let's  write    some  code.  ";
+int main(){     // 2       3        2     1       4      2      2
+    char str[] = "  Hello,   world!  Let's write    some  code.  ";
     int gap = 0;
     int minGap = -1;
     int wordFound = 0;
