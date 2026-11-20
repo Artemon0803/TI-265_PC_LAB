@@ -26,7 +26,7 @@ void* add_train_data(struct TRAIN *pTrain);
 void* delete_train(struct TRAIN *pTrain);
 void sort_train_data(struct TRAIN *pTrain);
 void show_all_trains(struct TRAIN *pTrain);
-short search_train(struct TRAIN *pTrain);
+int search_train(struct TRAIN *pTrain);
 
 int main(){
     struct TRAIN *pTrain = NULL;
@@ -135,7 +135,7 @@ void sort_train_data(struct TRAIN *pTrain){
     }
 }
 
-short search_train(struct TRAIN *pTrain){
+int search_train(struct TRAIN *pTrain){
     if (recordingCount == 0) {
         printf("\nNo trains to search.\n");
         return -1;
@@ -147,14 +147,14 @@ short search_train(struct TRAIN *pTrain){
     if(searchTerm < 0){
         printf("\nError: train number cannot be negative.\n");
     } else {
-        short found = 0;
+        int found = -1;
         for(int i = 0; i < recordingCount; i++){
             if((pTrain+i)->TERM == searchTerm){
                 found = i;
                 break;
             }
         }
-        if(!found){
+        if(found == -1){
             printf("\nTrain with number %d not found.\n", searchTerm);
             return -1;
         } else {
